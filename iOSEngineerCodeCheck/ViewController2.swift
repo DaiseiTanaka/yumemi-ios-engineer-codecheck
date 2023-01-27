@@ -10,24 +10,30 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    // メイン画像
     @IBOutlet weak var ImgView: UIImageView!
-    
+    //　タイトル
     @IBOutlet weak var TtlLbl: UILabel!
-    
+    // 使用言語
     @IBOutlet weak var LangLbl: UILabel!
-    
+    //　スターの数
     @IBOutlet weak var StrsLbl: UILabel!
+    //　Wathcersの数
     @IBOutlet weak var WchsLbl: UILabel!
+    //　Forksの数
     @IBOutlet weak var FrksLbl: UILabel!
+    //　Issuesの数
     @IBOutlet weak var IsssLbl: UILabel!
     
-    var vc1: SearchViewController!
+    
+    var searchVC: SearchViewController!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let repo = vc1.repo[vc1.idx]
+        let repo = searchVC.repo[searchVC.idx]
         
+        // 表示されるレポジトリの詳細表示
         LangLbl.text = "Written in \(repo["language"] as? String ?? "")"
         StrsLbl.text = "\(repo["stargazers_count"] as? Int ?? 0) stars"
         WchsLbl.text = "\(repo["wachers_count"] as? Int ?? 0) watchers"
@@ -39,7 +45,7 @@ class DetailViewController: UIViewController {
     
     func getImage(){
         
-        let repo = vc1.repo[vc1.idx]
+        let repo = searchVC.repo[searchVC.idx]
         
         TtlLbl.text = repo["full_name"] as? String
         

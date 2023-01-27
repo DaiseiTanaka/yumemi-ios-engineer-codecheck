@@ -10,14 +10,18 @@ import UIKit
 
 class SearchViewController: UITableViewController, UISearchBarDelegate {
 
+    // UI関連
     @IBOutlet weak var SchBr: UISearchBar!
     
-    
+    // レポジトリ
     var repo: [[String: Any]]=[]
-    
+    // タスク
     var task: URLSessionTask?
+    // 検索ワード
     var word: String!
+    // GitHubのレポジトリ検索用url
     var url: String!
+    // タップされた検索結果のindex
     var idx: Int!
     
     override func viewDidLoad() {
@@ -46,15 +50,15 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
             task = URLSession.shared.dataTask(with: URL(string: url)!) { (data, res, err) in
                 if let obj = try! JSONSerialization.jsonObject(with: data!) as? [String: Any] {
                     if let items = obj["items"] as? [[String: Any]] {
-                    self.repo = items
+                        self.repo = items
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
                     }
                 }
             }
-        // これ呼ばなきゃリストが更新されません
-        task?.resume()
+            // これ呼ばなきゃリストが更新されません
+            task?.resume()
         }
         
     }
@@ -63,7 +67,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         
         if segue.identifier == "Detail"{
             let dtl = segue.destination as! DetailViewController
-            dtl.vc1 = self
+            dtl.searchVC = self
         }
         
     }
