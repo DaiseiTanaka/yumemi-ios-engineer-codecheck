@@ -12,6 +12,7 @@ class ViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet weak var SchBr: UISearchBar!
     
+    
     var repo: [[String: Any]]=[]
     
     var task: URLSessionTask?
