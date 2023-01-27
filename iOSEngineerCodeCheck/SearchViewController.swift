@@ -18,9 +18,9 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     // タスク
     var task: URLSessionTask?
     // 検索ワード
-    var word: String!
+    var word: String?
     // GitHubのレポジトリ検索用url
-    var url: String!
+    var url: String?
     // タップされた検索結果のindex
     var idx: Int!
     
@@ -43,30 +43,35 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        word = searchBar.text!
+        guard let searchedWord = searchBar.text else { return }
+        // searchBarに文字が入っているか確認
+        if searchedWord.isEmpty { return }
         
-        if word.count != 0 {
-            url = "https://api.github.com/search/repositories?q=\(word!)"
-            task = URLSession.shared.dataTask(with: URL(string: url)!) { (data, res, err) in
-                if let obj = try! JSONSerialization.jsonObject(with: data!) as? [String: Any] {
-                    if let items = obj["items"] as? [[String: Any]] {
-                        self.repo = items
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                        }
-                    }
-                }
+        guard let url = URL(string: "https://api.github.com/search/repositories?q=\(searchedWord)") else { return }
+        
+        task = URLSession.shared.dataTask(with: url) { (data, res, err) in
+            // データの型をそれぞれ確認
+            guard let data = data else { return }
+            guard let json = try? JSONSerialization.jsonObject(with: data) else { return }
+            guard let obj = json as? [String: Any] else { return }
+            guard let items = obj["items"] as? [[String: Any]] else { return }
+            
+            self.repo = items
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
-            // これ呼ばなきゃリストが更新されません
-            task?.resume()
         }
+        // これ呼ばなきゃリストが更新されません
+        task?.resume()
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "Detail"{
-            let dtl = segue.destination as! DetailViewController
+            guard let dtl = segue.destination as? DetailViewController else {
+                return
+            }
             dtl.searchVC = self
         }
         
