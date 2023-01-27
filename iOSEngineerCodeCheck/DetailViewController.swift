@@ -32,6 +32,13 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        changeLabels()
+        getImage()
+        
+    }
+    
+    func changeLabels() {
+        
         let repo = searchVC.repo[searchVC.idx]
         
         // 表示されるレポジトリの詳細表示
@@ -40,8 +47,6 @@ class DetailViewController: UIViewController {
         WchsLbl.text = "\(repo["wachers_count"] as? Int ?? 0) watchers"
         FrksLbl.text = "\(repo["forks_count"] as? Int ?? 0) forks"
         IsssLbl.text = "\(repo["open_issues_count"] as? Int ?? 0) open issues"
-        getImage()
-        
     }
 
     func getImage() {
