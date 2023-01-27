@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchViewController: UITableViewController, UISearchBarDelegate {
+class SearchViewController: UITableViewController {
 
     // UI関連
     @IBOutlet weak var SchBr: UISearchBar!
@@ -29,41 +29,6 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         // Do any additional setup after loading the view.
         SchBr.text = "GitHubのリポジトリを検索できるよー"
         SchBr.delegate = self
-    }
-    
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        // ↓こうすれば初期のテキストを消せる
-        searchBar.text = ""
-        return true
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        task?.cancel()
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        guard let searchedWord = searchBar.text else { return }
-        // searchBarに文字が入っているか確認
-        if searchedWord.isEmpty { return }
-        
-        guard let url = URL(string: "https://api.github.com/search/repositories?q=\(searchedWord)") else { return }
-        
-        task = URLSession.shared.dataTask(with: url) { (data, res, err) in
-            // データの型をそれぞれ確認
-            guard let data = data else { return }
-            guard let json = try? JSONSerialization.jsonObject(with: data) else { return }
-            guard let obj = json as? [String: Any] else { return }
-            guard let items = obj["items"] as? [[String: Any]] else { return }
-            
-            self.repo = items
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-        // これ呼ばなきゃリストが更新されません
-        task?.resume()
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -99,4 +64,41 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         
     }
     
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        // ↓こうすれば初期のテキストを消せる
+        searchBar.text = ""
+        return true
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        task?.cancel()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        guard let searchedWord = searchBar.text else { return }
+        // searchBarに文字が入っているか確認
+        if searchedWord.isEmpty { return }
+        
+        guard let url = URL(string: "https://api.github.com/search/repositories?q=\(searchedWord)") else { return }
+        
+        task = URLSession.shared.dataTask(with: url) { (data, res, err) in
+            // データの型をそれぞれ確認
+            guard let data = data else { return }
+            guard let json = try? JSONSerialization.jsonObject(with: data) else { return }
+            guard let obj = json as? [String: Any] else { return }
+            guard let items = obj["items"] as? [[String: Any]] else { return }
+            
+            self.repo = items
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        // これ呼ばなきゃリストが更新されません
+        task?.resume()
+        
+    }
 }
