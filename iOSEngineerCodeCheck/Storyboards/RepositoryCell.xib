@@ -28,7 +28,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="mfg-9f-6gQ"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -51,28 +51,28 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ChW-Pe-wcc" userLabel="starImageView">
-                        <rect key="frame" x="150" y="152" width="16" height="16"/>
+                        <rect key="frame" x="160" y="152" width="16" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="IHn-EB-NO7"/>
                             <constraint firstAttribute="width" constant="16" id="qIq-tZ-NJo"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHX-2d-ifY" userLabel="starCountLabel">
-                        <rect key="frame" x="171" y="150" width="41.333333333333343" height="20.333333333333343"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="181" y="151" width="37.333333333333343" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hay-o5-60Y" userLabel="starImageView">
-                        <rect key="frame" x="227.33333333333334" y="152" width="16" height="16"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hay-o5-60Y" userLabel="watchImageView">
+                        <rect key="frame" x="233.33333333333334" y="152" width="16" height="16"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="16" id="Gzr-RT-2Hx"/>
                             <constraint firstAttribute="height" constant="16" id="LCY-KQ-91v"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mau-zg-xxh" userLabel="starCountLabel">
-                        <rect key="frame" x="248.33333333333334" y="150" width="41.333333333333343" height="20.333333333333343"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mau-zg-xxh" userLabel="watchCountLabel">
+                        <rect key="frame" x="254.33333333333334" y="151" width="37.333333333333343" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -82,26 +82,25 @@
                             <constraint firstAttribute="width" constant="100" id="IM5-bI-v19"/>
                             <constraint firstAttribute="height" constant="20" id="i7B-ze-c67"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WGt-w3-igB" userLabel="starImageView">
-                        <rect key="frame" x="304.66666666666669" y="152" width="16" height="16"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WGt-w3-igB" userLabel="forkImageView">
+                        <rect key="frame" x="306.66666666666669" y="152" width="16" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="a6q-rx-eT3"/>
                             <constraint firstAttribute="width" constant="16" id="pk5-1J-0GR"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1le-MP-TZz" userLabel="starCountLabel">
-                        <rect key="frame" x="325.66666666666669" y="150" width="41.333333333333314" height="20.333333333333343"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1le-MP-TZz" userLabel="forkCountLabel">
+                        <rect key="frame" x="327.66666666666669" y="151" width="37.333333333333314" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ChW-Pe-wcc" firstAttribute="leading" secondItem="D8T-Eq-gMc" secondAttribute="trailing" constant="35" id="0RZ-R4-i9Q"/>
                     <constraint firstItem="apI-Zh-ILQ" firstAttribute="top" secondItem="w4C-al-q9Z" secondAttribute="bottom" constant="10" id="0Zy-O3-UPy"/>
                     <constraint firstItem="hay-o5-60Y" firstAttribute="centerY" secondItem="D8T-Eq-gMc" secondAttribute="centerY" id="0mK-Bh-tOA"/>
                     <constraint firstItem="C07-oz-UZG" firstAttribute="top" secondItem="jzc-nr-TuL" secondAttribute="top" constant="10" id="4vp-Ig-ZfN"/>
@@ -125,20 +124,21 @@
                     <constraint firstItem="hay-o5-60Y" firstAttribute="leading" secondItem="eHX-2d-ifY" secondAttribute="trailing" constant="15" id="pN5-9m-Cr5"/>
                     <constraint firstItem="1le-MP-TZz" firstAttribute="leading" secondItem="WGt-w3-igB" secondAttribute="trailing" constant="5" id="unh-X0-wrU"/>
                     <constraint firstAttribute="trailing" secondItem="C07-oz-UZG" secondAttribute="trailing" constant="8" id="yj7-fJ-jwO"/>
+                    <constraint firstAttribute="trailing" secondItem="1le-MP-TZz" secondAttribute="trailing" constant="20" id="yx3-OK-DT7"/>
                     <constraint firstItem="WGt-w3-igB" firstAttribute="leading" secondItem="mau-zg-xxh" secondAttribute="trailing" constant="15" id="zag-c4-2Kg"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="forkCountLabel" destination="1le-MP-TZz" id="bsK-ri-OEY"/>
+                <outlet property="forkCountLabel" destination="1le-MP-TZz" id="fjm-mc-fdH"/>
                 <outlet property="forkImageView" destination="WGt-w3-igB" id="vrg-hD-PE3"/>
                 <outlet property="languageLabel" destination="D8T-Eq-gMc" id="Kfj-GU-kZg"/>
                 <outlet property="ownerImageView" destination="Eev-Xe-UJy" id="HMF-km-8M7"/>
                 <outlet property="ownerNameLabel" destination="C07-oz-UZG" id="g90-BQ-FS3"/>
                 <outlet property="repositoryDescriptionLabel" destination="apI-Zh-ILQ" id="VkI-fV-xE3"/>
                 <outlet property="repositoryNameLabel" destination="w4C-al-q9Z" id="Zb5-Bw-GqZ"/>
-                <outlet property="starCountLabel" destination="eHX-2d-ifY" id="yk0-6C-GMj"/>
+                <outlet property="starCountLabel" destination="eHX-2d-ifY" id="2ee-Ih-0ix"/>
                 <outlet property="starImageView" destination="ChW-Pe-wcc" id="bwE-MF-B4n"/>
-                <outlet property="watchCountLabel" destination="mau-zg-xxh" id="Gcq-sR-sMP"/>
+                <outlet property="watchCountLabel" destination="mau-zg-xxh" id="YvK-QF-g6o"/>
                 <outlet property="watchImageView" destination="hay-o5-60Y" id="0XR-eF-Y3R"/>
             </connections>
             <point key="canvasLocation" x="-310.68702290076334" y="-105.98591549295776"/>

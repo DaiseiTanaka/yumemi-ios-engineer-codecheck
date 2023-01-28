@@ -14,7 +14,7 @@ class SearchViewController: UITableViewController {
     // UI関連
     @IBOutlet private weak var searchBar: UISearchBar! {
         didSet {
-            searchBar.placeholder = "リポジトリを検索できるよ！"
+            searchBar.placeholder = "Search repositories"
             searchBar.delegate = self
         }
     }
