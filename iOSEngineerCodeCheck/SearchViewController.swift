@@ -11,16 +11,16 @@ import UIKit
 class SearchViewController: UITableViewController {
 
     // UI関連
-    @IBOutlet weak var SchBr: UISearchBar!
+    @IBOutlet weak private var SchBr: UISearchBar!
     
     // レポジトリ
-    var repo: [[String: Any]]=[]
+    var repositories: [[String: Any]] = []
     // タスク
-    var task: URLSessionTask?
+    private var task: URLSessionTask?
     // 検索ワード
-    var word: String?
+    private var word: String?
     // GitHubのレポジトリ検索用url
-    var url: String?
+    private var url: String?
     // タップされた検索結果のindex
     var idx: Int!
     
@@ -43,15 +43,15 @@ class SearchViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repo.count
+        return repositories.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell()
-        let rp = repo[indexPath.row]
-        cell.textLabel?.text = rp["full_name"] as? String ?? ""
-        cell.detailTextLabel?.text = rp["language"] as? String ?? ""
+        let repo = repositories[indexPath.row]
+        cell.textLabel?.text = repo["full_name"] as? String ?? ""
+        cell.detailTextLabel?.text = repo["language"] as? String ?? ""
         cell.tag = indexPath.row
         return cell
         
@@ -92,7 +92,7 @@ extension SearchViewController: UISearchBarDelegate {
             guard let obj = json as? [String: Any] else { return }
             guard let items = obj["items"] as? [[String: Any]] else { return }
             
-            self.repo = items
+            self.repositories = items
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }

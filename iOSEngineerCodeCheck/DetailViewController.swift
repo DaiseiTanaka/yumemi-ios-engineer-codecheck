@@ -11,20 +11,19 @@ import UIKit
 class DetailViewController: UIViewController {
     
     // メイン画像
-    @IBOutlet weak var ImgView: UIImageView!
+    @IBOutlet weak private var ImgView: UIImageView!
     //　タイトル
-    @IBOutlet weak var TtlLbl: UILabel!
+    @IBOutlet weak private var TtlLbl: UILabel!
     // 使用言語
-    @IBOutlet weak var LangLbl: UILabel!
+    @IBOutlet weak private var LangLbl: UILabel!
     //　スターの数
-    @IBOutlet weak var StrsLbl: UILabel!
+    @IBOutlet weak private var StrsLbl: UILabel!
     //　Wathcersの数
-    @IBOutlet weak var WchsLbl: UILabel!
+    @IBOutlet weak private var WchsLbl: UILabel!
     //　Forksの数
-    @IBOutlet weak var FrksLbl: UILabel!
+    @IBOutlet weak private var FrksLbl: UILabel!
     //　Issuesの数
-    @IBOutlet weak var IsssLbl: UILabel!
-    
+    @IBOutlet weak private var IsssLbl: UILabel!
     
     var searchVC: SearchViewController!
     
@@ -32,33 +31,35 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        changeLabels()
-        getImage()
+        guard let selectedRowIndex = searchVC.idx else { return }
+        let repo = searchVC.repositories[selectedRowIndex]
+        
+        getLabelText(repo: repo)
+        getImage(repo: repo)
         
     }
     
-    func changeLabels() {
-        
-        let repo = searchVC.repo[searchVC.idx]
-        
-        // 表示されるレポジトリの詳細表示
+    // 表示されるレポジトリの詳細表示
+    func getLabelText(repo: [String: Any]) {
+
         LangLbl.text = "Written in \(repo["language"] as? String ?? "")"
         StrsLbl.text = "\(repo["stargazers_count"] as? Int ?? 0) stars"
         WchsLbl.text = "\(repo["wachers_count"] as? Int ?? 0) watchers"
         FrksLbl.text = "\(repo["forks_count"] as? Int ?? 0) forks"
         IsssLbl.text = "\(repo["open_issues_count"] as? Int ?? 0) open issues"
-    }
-
-    func getImage() {
         
-        let repo = searchVC.repo[searchVC.idx]
+    }
+    
+    // 表示されるレポジトリの画像表示
+    func getImage(repo: [String: Any]) {
         
         TtlLbl.text = repo["full_name"] as? String
         
         guard let owner = repo["owner"] as? [String: Any] else { return }
-        guard  let imgURL = owner["avatar_url"] as? String else { return }
+        guard let imgURLString = owner["avatar_url"] as? String else { return }
+        guard let imgURL = URL(string: imgURLString) else { return }
         
-        URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, res, err) in
+        URLSession.shared.dataTask(with: imgURL) { (data, res, err) in
             
             guard let data = data else { return }
             guard let img = UIImage(data: data) else { return }
@@ -68,7 +69,6 @@ class DetailViewController: UIViewController {
             }
             
         }.resume()
-    
     }
     
 }
