@@ -7,6 +7,8 @@ target 'iOSEngineerCodeCheck' do
 
   # Pods for iOSEngineerCodeCheck
   pod 'APIKit'
+  pod 'JGProgressHUD'
+  pod 'SDWebImage'
 
   target 'iOSEngineerCodeCheckTests' do
     inherit! :search_paths
