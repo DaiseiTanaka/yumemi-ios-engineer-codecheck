@@ -30,7 +30,7 @@ class SearchViewController: UITableViewController {
         let nib = UINib(nibName: RepositoryCell.cellIdentifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: RepositoryCell.cellIdentifier)
         
-        tableView.rowHeight = 200
+        tableView.rowHeight = 180
     }
     
     private func showAlert(title: String, message: String = "") -> UIAlertController {

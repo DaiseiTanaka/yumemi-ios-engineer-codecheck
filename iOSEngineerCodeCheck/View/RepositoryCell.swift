@@ -30,10 +30,24 @@ class RepositoryCell: UITableViewCell {
         }
     }
     
+    @IBOutlet private weak var watchImageView: UIImageView!{
+        didSet {
+            watchImageView.setImage(systemName: "eye", tintColor: UIColor.systemGray)
+        }
+    }
+    
+    @IBOutlet private weak var forkImageView: UIImageView!{
+        didSet {
+            forkImageView.setImage(systemName: "arrow.triangle.branch", tintColor: UIColor.systemGray)
+        }
+    }
+    
     @IBOutlet private weak var ownerNameLabel: UILabel!
     @IBOutlet private weak var repositoryDescriptionLabel: UILabel!
     @IBOutlet private weak var starCountLabel: UILabel!
     @IBOutlet private weak var languageLabel: UILabel!
+    @IBOutlet private weak var watchCountLabel: UILabel!
+    @IBOutlet private weak var forkCountLabel: UILabel!
     
     static let cellIdentifier = String(describing: RepositoryCell.self)
     
@@ -50,6 +64,8 @@ class RepositoryCell: UITableViewCell {
         repositoryDescriptionLabel.text = repository.description ?? ""
         starCountLabel.text = "\(repository.stargazersCount)"
         languageLabel.text = repository.language
+        watchCountLabel.text = "\(repository.watchersCount)"
+        forkCountLabel.text = "\(repository.forksCount)"
         accessoryType = .disclosureIndicator
     }
 }
