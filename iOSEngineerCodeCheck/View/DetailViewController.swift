@@ -73,7 +73,7 @@ class DetailViewController: UIViewController {
         getImage(repository: repository)
     }
 
-    // 表示されるレポジトリの詳細表示
+    //MARK: - 表示されるレポジトリの詳細表示
     func getLabelText(repository: Repository) {
 
         LangLbl.text = "Language:  \(repository.language ?? "")"
@@ -85,7 +85,7 @@ class DetailViewController: UIViewController {
 
     }
 
-    // 表示されるレポジトリの画像表示
+    //MARK: - 表示されるレポジトリの画像表示
     func getImage(repository: Repository) {
 
         titleButton.setTitle(repository.fullName, for: UIControl.State.normal)
@@ -106,6 +106,7 @@ class DetailViewController: UIViewController {
         }.resume()
     }
     
+    //MARK: - URL先へ移動
     func goWebSite() {
         guard let selectedIndex = searchVC.idx else { return }
         let repository = searchVC.repositories[selectedIndex]

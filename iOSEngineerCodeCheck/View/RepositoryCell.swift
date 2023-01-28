@@ -51,6 +51,7 @@ class RepositoryCell: UITableViewCell {
     
     static let cellIdentifier = String(describing: RepositoryCell.self)
     
+    //MARK: - セルのラベルとイメージを変更
     func configure(repository: Repository) {
         ownerNameLabel.text = repository.owner.login
         repositoryNameLabel.text = repository.fullName

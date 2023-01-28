@@ -11,7 +11,7 @@ import JGProgressHUD
 
 class SearchViewController: UITableViewController {
     
-    // UI関連
+    //MARK: - UI関連
     @IBOutlet private weak var searchBar: UISearchBar! {
         didSet {
             searchBar.placeholder = "Search repositories"
@@ -33,6 +33,7 @@ class SearchViewController: UITableViewController {
         tableView.rowHeight = 180
     }
     
+    //MARK: - アラート処理
     private func showAlert(title: String, message: String = "") -> UIAlertController {
         let alert: UIAlertController = UIAlertController(title: title, message : message, preferredStyle: UIAlertController.Style.alert)
         let defaultAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
