@@ -90,7 +90,7 @@ class RepositoryCell: UITableViewCell {
         
         repositoryDescriptionLabel.text = repository.description ?? ""
         starCountLabel.text = "\(repository.stargazersCount)"
-        languageLabel.text = repository.language
+        languageLabel.text = "Language: \(repository.language ?? "")"
         watchCountLabel.text = "\(repository.watchersCount)"
         forkCountLabel.text = "\(repository.forksCount)"
         accessoryType = .disclosureIndicator
