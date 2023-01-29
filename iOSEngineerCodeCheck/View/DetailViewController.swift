@@ -28,9 +28,9 @@ class DetailViewController: UIViewController {
     //　Issuesの数
     @IBOutlet private weak var IsssLbl: UILabel!
     // リンク付きのタイトル
-    @IBOutlet weak var titleButton: UIButton!
+    @IBOutlet private weak var titleButton: UIButton!
     // 説明文用ラベル
-    @IBOutlet weak var DiscriptionLabel: UILabel!
+    @IBOutlet private weak var DiscriptionLabel: UILabel!
     // レポジトリのサイトへ移動するためのボタン
     @IBAction func GoWebSite(_ sender: Any) {
         goWebSite()

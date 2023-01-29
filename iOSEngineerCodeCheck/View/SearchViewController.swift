@@ -19,11 +19,13 @@ class SearchViewController: UITableViewController {
         }
     }
     
+    // レポジトリ一覧
     var repositories: [Repository] = []
     
     // タップされた検索結果のindex
     var idx: Int!
     
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -73,7 +75,6 @@ class SearchViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "Detail"{
             guard let dtl = segue.destination as? DetailViewController else {
                 return
@@ -98,6 +99,7 @@ extension SearchViewController:UISearchBarDelegate{
         guard !(searchBar.text?.isEmpty ?? true) else { return }
         searchBar.resignFirstResponder()
         
+        // ローディング画面の表示
         let progressHUD = JGProgressHUD()
         progressHUD.show(in: self.view)
         
@@ -108,11 +110,13 @@ extension SearchViewController:UISearchBarDelegate{
                 }
                 
                 switch result {
+                // 通信成功
                 case .success(let items):
                     self.repositories = items
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
+                // 通信失敗
                 case .failure(let error):
                     DispatchQueue.main.async {
                         switch error {
