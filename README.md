@@ -36,7 +36,7 @@
 
 
 ## Issuesについて
-- [元のリポジトリ](https://github.com/yumemi-inc/ios-engineer-codecheck)からIssuesをコピーしようとしたがエラーが発生していてコピーできなかった。
+- [元のリポジトリ](https://github.com/yumemi-inc/ios-engineer-codecheck)からIssuesをコピーしようとしたがエラーが発生していてコピーできなかったため、CommitのコメントにどのIssuesに対処したのかを書きました。
 
 
 ## 工夫した点
@@ -51,6 +51,7 @@
 
 ## 反省点
 - Commitごとに変更内容の分担を意識していたが、ところどころCommitを忘れ、一度に複数の機能をPushしてしまった。
+- 初めの方のCommitのコメントにどのIssuesへ対処したのかを書くのを忘れていた。
 
 
 ## 参考にしたサイト
