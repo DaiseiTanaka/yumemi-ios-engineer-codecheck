@@ -16,6 +16,8 @@
 		35496B442985432400AAB19B /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35496B412985432400AAB19B /* RepositoryCell.swift */; };
 		35496B46298543A600AAB19B /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35496B45298543A600AAB19B /* SFSymbols.swift */; };
 		35496B492986935300AAB19B /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35496B482986935300AAB19B /* RepositoryCell.xib */; };
+		35496B4C2986958A00AAB19B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35496B3F2985432400AAB19B /* SearchViewController.swift */; };
+		35496B4D2986958B00AAB19B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35496B3F2985432400AAB19B /* SearchViewController.swift */; };
 		39F8569E3BC943EF670D6199 /* Pods_iOSEngineerCodeCheck_iOSEngineerCodeCheckUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6094F216F246677C3260749B /* Pods_iOSEngineerCodeCheck_iOSEngineerCodeCheckUITests.framework */; };
 		3FA4C7F15039AA69D7124969 /* Pods_iOSEngineerCodeCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C76177C11A77CA03651E0AE /* Pods_iOSEngineerCodeCheck.framework */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
@@ -473,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35496B4C2986958A00AAB19B /* SearchViewController.swift in Sources */,
 				BFD945F6244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35496B4D2986958B00AAB19B /* SearchViewController.swift in Sources */,
 				BFD94601244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

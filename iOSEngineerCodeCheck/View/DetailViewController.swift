@@ -38,25 +38,25 @@ class DetailViewController: UIViewController {
     
     @IBOutlet private weak var starImageView: UIImageView!{
         didSet {
-            starImageView.setImage(systemName: "star", tintColor: UIColor.systemGray)
+            starImageView.setImage(systemName: "star", tintColor: UIColor.orange)
         }
     }
     
     @IBOutlet private weak var watchImageView: UIImageView!{
         didSet {
-            watchImageView.setImage(systemName: "eye", tintColor: UIColor.systemGray)
+            watchImageView.setImage(systemName: "eye", tintColor: UIColor.blue)
         }
     }
     
     @IBOutlet private weak var forkImageView: UIImageView!{
         didSet {
-            forkImageView.setImage(systemName: "arrow.triangle.branch", tintColor: UIColor.systemGray)
+            forkImageView.setImage(systemName: "arrow.triangle.branch", tintColor: UIColor.green)
         }
     }
     
     @IBOutlet private weak var issuesImageView: UIImageView!{
         didSet {
-            issuesImageView.setImage(systemName: "smallcircle.filled.circle", tintColor: UIColor.systemGray)
+            issuesImageView.setImage(systemName: "smallcircle.filled.circle", tintColor: UIColor.red)
         }
     }
     
@@ -77,10 +77,10 @@ class DetailViewController: UIViewController {
     func getLabelText(repository: Repository) {
 
         LangLbl.text = "Language:  \(repository.language ?? "")"
-        StrsLbl.text = "\(repository.stargazersCount ) stars"
-        WchsLbl.text = "\(repository.watchersCount ) watchers"
-        FrksLbl.text = "\(repository.forksCount) forks"
-        IsssLbl.text = "\(repository.openIssuesCount) open issues"
+        StrsLbl.text = "\(repository.stargazersCount)"
+        WchsLbl.text = "\(repository.watchersCount)"
+        FrksLbl.text = "\(repository.forksCount)"
+        IsssLbl.text = "\(repository.openIssuesCount)"
         DiscriptionLabel.text = repository.description
 
     }
