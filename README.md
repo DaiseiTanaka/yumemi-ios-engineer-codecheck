@@ -2,7 +2,7 @@
 
 ## 概要
 
-本プロジェクトは株式会社ゆめみのコーディング課題です。
+本プロジェクトは株式会社ゆめみ様のiOSアプリケーション用のコーディング課題です。
 
 ## アプリ仕様
 
@@ -10,11 +10,13 @@
 
 ![動作イメージ](README_Images/app.gif)
 
+
 ### 環境
 
 - IDE：基本最新の安定版（本概要更新時点では Xcode 14.2）
 - Swift：基本最新の安定版（本概要更新時点では Swift 5.7）
 - 開発ターゲット：基本最新の安定版（本概要更新時点では iOS 16.1）
+
 
 ### 使用したライブラリ
 
@@ -24,6 +26,7 @@
 - [SDWebImage](https://github.com/SDWebImage/SDWebImage)
 画像表示用に使用
 
+
 ### 動作
 
 1. 何かしらのキーワードを入力
@@ -31,5 +34,11 @@
 3. 特定の結果を選択したら、該当リポジトリの詳細（リポジトリ名、オーナーアイコン、プロジェクト言語、Star 数、Watcher 数、Fork 数、Issue 数）を表示
 4. 詳細画面内のリンクからGitHubのWebページへ移動できます。
 
+
+### 工夫した点
+
+
 ### 参考にしたサイト
-## [Qiita](https://qiita.com/SHOBLOG/items/5083e43558581cbf0dee)
+
+## [参考サイト1](https://qiita.com/SHOBLOG/items/5083e43558581cbf0dee)
+## [参考サイト2](https://zenn.dev/ikeh1024/articles/1b8c0ecc11c99f)
