@@ -8,7 +8,7 @@
 
 本アプリは GitHub のリポジトリーを検索するアプリです。
 
-![動作イメージ](README_Images/app.gif)
+![動作イメージ]([README_Images/app.gif](https://user-images.githubusercontent.com/65376978/215792032-ee9d708f-3380-479e-ab17-bcb85b975d39.mov))
 
 
 ## 環境
@@ -36,6 +36,7 @@
 
 
 ## Issuesについて
+
 - [元のリポジトリ](https://github.com/yumemi-inc/ios-engineer-codecheck)からIssuesをコピーしようとしたがエラーが発生していてコピーできなかったため、CommitのコメントにどのIssuesに対処したのかを書きました。
 
 
@@ -47,11 +48,12 @@
 
 
 ## 苦労した点
+
 - READMEを編集したらローカルリポジトリをプッシュやプルできなくなり、結局もう一度プロジェクトをクローンして対応しました。
-- テストコードの経験が浅く、作成に一番時間がかかりました。
 
 
 ## 反省点
+
 - Commitごとに変更内容の分担を意識していたが、ところどころCommitを忘れ、一度に複数の機能をPushしてしまった。
 - 初めの方のCommitのコメントにどのIssuesへ対処したのかを書くのを忘れていた。
 
