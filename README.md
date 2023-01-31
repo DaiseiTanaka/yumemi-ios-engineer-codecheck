@@ -8,8 +8,6 @@
 
 本アプリは GitHub のリポジトリーを検索するアプリです。
 
-![動作イメージ](https://user-images.githubusercontent.com/65376978/215792032-ee9d708f-3380-479e-ab17-bcb85b975d39.mov)
-
 https://user-images.githubusercontent.com/65376978/215792442-acd06744-4186-419a-86dd-916586d3ad0d.mov
 
 
